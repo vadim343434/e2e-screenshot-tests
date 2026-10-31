@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти</title>
+  <style>
+    .card {
+      border: 2px solid red;
+      background-color: #fff3cd;
+      padding: 16px;
+      width: 320px;
+      border-radius: 6px;
+    }
+    .form-group {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+    }
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Зворотний зв'язок</h2>
+  <div class="card" id="contactCard">
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="email">Електронна пошта:</label>
+        <input id="email" type="email" placeholder="name@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" rows="3" required></textarea>
+      </div>
+      <button id="sendBtn" type="submit">Відправити</button>
+    </form>
+    <p id="sendSuccess" style="display: none; color: green;">Повідомлення успішно надіслано!</p>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('sendSuccess').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
