@@ -30,5 +30,12 @@ jobs:
       - name: Update Linux screenshots
         run: npx playwright test --update-snapshots
 
+      - name: Upload Linux screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-screenshots
+          path: tests/screenshots/**/*-linux.png
+          if-no-files-found: error
+
       - name: Run tests
         run: npm test
